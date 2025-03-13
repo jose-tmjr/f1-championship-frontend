@@ -8,9 +8,9 @@ const http = axios.create({
   },
 });
 
-http.interceptors.request.use((config) => {
-  config.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
-  return config;
-});
+// http.interceptors.request.use((config) => {
+//   config.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
+//   return config;
+// });
 
 export default http;
