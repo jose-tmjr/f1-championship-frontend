@@ -32,7 +32,7 @@ export const Scores: Score[] = [
 ];
 
 export function calculateRacePoint(race: Races, result: Results|undefined): number {
-  if(!result) return 0;
+  if (!result) return 0;
 
   const score = Scores.find(
     (score) => score.position === result.driver_final_position && score.is_sprint === race.is_sprint

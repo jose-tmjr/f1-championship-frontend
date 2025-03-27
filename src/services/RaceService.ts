@@ -16,10 +16,10 @@ export default class RaceService extends BaseService{
 
       for(const result of resultsFromRace) {
         const driver: Driver|undefined = this.driversData.find((driver) => driver.driver_id === result.driver_id);
-        if(!driver) continue;
+        if (!driver) continue;
 
         const team: Team|undefined = this.teamsData.find((team) => team.team_id === driver?.team_id);
-        if(!team) continue;
+        if (!team) continue;
 
         driversRaceResults.push(new DriverRaceResultModel(driver, team, result, race));
       }

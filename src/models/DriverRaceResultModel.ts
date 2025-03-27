@@ -17,7 +17,7 @@ export default class DriverRaceResultModel {
 
   constructor(driver: Driver, team: Team, result: Results, race: Races) {
 
-    if(driver.team_id !== team.team_id) {
+    if (driver.team_id !== team.team_id) {
       throw new Error('Driver and Team are not from the same team');
     }
 
