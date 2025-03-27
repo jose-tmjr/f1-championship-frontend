@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const http = axios.create({
   baseURL: '/api', //Using proxy configuration from vite.config.ts
-  timeout: 1000,
+  timeout: 3000,
   headers: {
     "Content-Type": "application/json",
   },
