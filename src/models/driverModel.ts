@@ -1,5 +1,5 @@
-import type { Driver } from "@/Interfaces/Driver.interface";
-import type { Team } from "@/Interfaces/Team.interface";
+import type { Driver } from "@/Interfaces/Driver";
+import type { Team } from "@/Interfaces/Team";
 
 class DriverModel {
   id: number;

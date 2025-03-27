@@ -1,8 +1,8 @@
 import { BaseRepository } from "./BaseRepository";
-import type { Driver } from "@/Interfaces/Driver.interface";
-import type { Race } from "@/Interfaces/Race.interface";
-import type { Result } from "@/Interfaces/Result.interface";
-import type { Team } from "@/Interfaces/Team.interface";
+import type { Driver } from "@/Interfaces/Driver";
+import type { Race } from "@/Interfaces/Race";
+import type { Result } from "@/Interfaces/Result";
+import type { Team } from "@/Interfaces/Team";
 import { CacheKeys } from "@/utils/CacheUtils";
 
 class DriverRepository extends BaseRepository {

@@ -1,4 +1,4 @@
-import type { Team } from "@/Interfaces/Team.interface";
+import type { Team } from "@/Interfaces/Team";
 import type DriverModel from "./driverModel";
 
 class ConstructorModel {
