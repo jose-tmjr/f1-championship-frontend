@@ -1,10 +1,13 @@
+import type { Races } from "@/Interfaces/Races";
+import type { Results } from "@/Interfaces/Results";
+
 type Score = {
   is_sprint: boolean;
   points: number;
   position: number;
 };
 
-const Scores: Score[] = [
+export const Scores: Score[] = [
   // Full Races
   { is_sprint: false, points: 25, position: 1 },
   { is_sprint: false, points: 18, position: 2 },
@@ -28,4 +31,13 @@ const Scores: Score[] = [
   { is_sprint: true, points: 1, position: 8 },
 ];
 
-export default Scores;
+export function calculateRacePoint(race: Races, result: Results|undefined): number {
+  if(!result) return 0;
+
+  const score = Scores.find(
+    (score) => score.position === result.driver_final_position && score.is_sprint === race.is_sprint
+  );
+
+  return score?.points || 0;
+}
+
