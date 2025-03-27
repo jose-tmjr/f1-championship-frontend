@@ -2,13 +2,11 @@ import { BaseRepository } from "./BaseRepository";
 import type { Driver } from "@/Interfaces/Driver";
 import type { Races } from "@/Interfaces/Races";
 import type { Results } from "@/Interfaces/Results";
-import type { Scores } from "@/Interfaces/Scores";
 import type { Team } from "@/Interfaces/Teams";
 
 class DriverRepository extends BaseRepository {
 
   async getDriversData(): Promise<Driver[]> {
-    console.log('api', import.meta.env.VITE_API_BASE_URL)
     return await this.get<Driver[]>('/load/drivers');
   }
 
@@ -22,10 +20,6 @@ class DriverRepository extends BaseRepository {
 
   async getResultsData(): Promise<Results[]> {
     return await this.get<Results[]>('/load/results');
-  }
-
-  async getScoresData(): Promise<Scores[]> {
-    return await this.get<Scores[]>('/load/scores');
   }
 }
 
