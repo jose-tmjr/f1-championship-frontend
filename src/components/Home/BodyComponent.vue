@@ -1,4 +1,14 @@
 <template>
+  <!-- Botão para limpar o cache no topo -->
+  <div class="p-6">
+    <button
+      @click="clearAppCache"
+      class="mb-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+    >
+      Clear Cache
+    </button>
+  </div>
+
   <div class="p-6">
     <h1 class="text-2xl font-bold mb-4">Drivers</h1>
     <table class="w-full text-left border-collapse">
@@ -53,6 +63,7 @@ import { ref, onMounted } from "vue";
 import HomeService from "@/services/HomeService";
 import type DriverModel from "@/models/driverModel";
 import type ConstructorModel from "@/models/constructorModel";
+import { clearCache } from "@/utils/CacheUtils";
 
 const drivers = ref<DriverModel[]>([]);
 const constructors = ref<ConstructorModel[]>([]);
@@ -69,6 +80,11 @@ async function loadDrivers() {
   } catch (error) {
     console.error("Erro ao carregar motoristas:", error);
   }
+}
+
+function clearAppCache() {
+  clearCache(); // Chama a função para limpar o cache
+  alert('Cache cleared!'); // Exibe um alerta informando que o cache foi limpo
 }
 
 onMounted(() => {

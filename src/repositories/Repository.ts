@@ -1,9 +1,9 @@
-import { CacheKeys } from "@/enum/CacheKeysEnum";
 import { BaseRepository } from "./BaseRepository";
 import type { Driver } from "@/Interfaces/Driver";
 import type { Races } from "@/Interfaces/Races";
 import type { Results } from "@/Interfaces/Results";
 import type { Team } from "@/Interfaces/Teams";
+import { CacheKeys } from "@/utils/CacheUtils";
 
 class DriverRepository extends BaseRepository {
 
