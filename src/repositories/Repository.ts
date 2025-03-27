@@ -1,3 +1,4 @@
+import { CacheKeys } from "@/enum/CacheKeysEnum";
 import { BaseRepository } from "./BaseRepository";
 import type { Driver } from "@/Interfaces/Driver";
 import type { Races } from "@/Interfaces/Races";
@@ -6,20 +7,92 @@ import type { Team } from "@/Interfaces/Teams";
 
 class DriverRepository extends BaseRepository {
 
-  async getDriversData(): Promise<Driver[]> {
-    return await this.get<Driver[]>('/load/drivers');
+  constructor() {
+    super();
   }
 
+  async getDriversData(): Promise<Driver[]> {
+    const cacheKey = CacheKeys.DRIVERS;
+
+    const cachedDrivers = localStorage.getItem(cacheKey);
+
+    if (cachedDrivers) {
+      return JSON.parse(cachedDrivers) as Driver[];
+    }
+
+    try {
+      const response = await this.get<Driver[]>('/load/drivers');
+      localStorage.setItem(cacheKey, JSON.stringify(response));
+      console.log('Drivers data loaded from API');
+      return response;
+
+    } catch (error) {
+      console.error('Error loading drivers data: ', error);
+      throw error;
+    }
+}
+
   async getTeamsData(): Promise<Team[]> {
-    return await this.get<Team[]>('/load/teams');
+    const cacheKey = CacheKeys.TEAMS;
+
+    const cachedDrivers = localStorage.getItem(cacheKey);
+
+    if (cachedDrivers) {
+      return JSON.parse(cachedDrivers) as Team[];
+    }
+
+    try {
+      const response = await this.get<Team[]>('/load/teams');
+      localStorage.setItem(cacheKey, JSON.stringify(response));
+      console.log('Team data loaded from API');
+      return response;
+
+    } catch (error) {
+      console.error('Error loading team data: ', error);
+      throw error;
+    }
   }
 
   async getRacesData(): Promise<Races[]> {
-    return await this.get<Races[]>('/load/races');
+    const cacheKey = CacheKeys.RACES;
+
+    const cachedDrivers = localStorage.getItem(cacheKey);
+
+    if (cachedDrivers) {
+      return JSON.parse(cachedDrivers) as Races[];
+    }
+
+    try {
+      const response = await this.get<Races[]>('/load/races');
+      localStorage.setItem(cacheKey, JSON.stringify(response));
+      console.log('Races data loaded from API');
+      return response;
+
+    } catch (error) {
+      console.error('Error loading races data: ', error);
+      throw error;
+    }
   }
 
   async getResultsData(): Promise<Results[]> {
-    return await this.get<Results[]>('/load/results');
+    const cacheKey = CacheKeys.RESULTS;
+
+    const cachedDrivers = localStorage.getItem(cacheKey);
+
+    if (cachedDrivers) {
+      return JSON.parse(cachedDrivers) as Results[];
+    }
+
+    try {
+      const response = await this.get<Results[]>('/load/results');
+      localStorage.setItem(cacheKey, JSON.stringify(response));
+      console.log('Results data loaded from API');
+      return response;
+
+    } catch (error) {
+      console.error('Error loading results data: ', error);
+      throw error;
+    }
   }
 }
 
