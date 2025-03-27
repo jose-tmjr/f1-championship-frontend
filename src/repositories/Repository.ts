@@ -1,8 +1,8 @@
 import { BaseRepository } from "./BaseRepository";
-import type { Driver } from "@/Interfaces/Driver";
-import type { Races } from "@/Interfaces/Races";
-import type { Results } from "@/Interfaces/Results";
-import type { Team } from "@/Interfaces/Teams";
+import type { Driver } from "@/Interfaces/Driver.interface";
+import type { Race } from "@/Interfaces/Race.interface";
+import type { Result } from "@/Interfaces/Result.interface";
+import type { Team } from "@/Interfaces/Team.interface";
 import { CacheKeys } from "@/utils/CacheUtils";
 
 class DriverRepository extends BaseRepository {
@@ -53,17 +53,17 @@ class DriverRepository extends BaseRepository {
     }
   }
 
-  async getRacesData(): Promise<Races[]> {
+  async getRacesData(): Promise<Race[]> {
     const cacheKey = CacheKeys.RACES;
 
     const cachedDrivers = localStorage.getItem(cacheKey);
 
     if (cachedDrivers) {
-      return JSON.parse(cachedDrivers) as Races[];
+      return JSON.parse(cachedDrivers) as Race[];
     }
 
     try {
-      const response = await this.get<Races[]>('/load/races');
+      const response = await this.get<Race[]>('/load/races');
       localStorage.setItem(cacheKey, JSON.stringify(response));
       console.log('Races data loaded from API');
       return response;
@@ -74,17 +74,17 @@ class DriverRepository extends BaseRepository {
     }
   }
 
-  async getResultsData(): Promise<Results[]> {
+  async getResultsData(): Promise<Result[]> {
     const cacheKey = CacheKeys.RESULTS;
 
     const cachedDrivers = localStorage.getItem(cacheKey);
 
     if (cachedDrivers) {
-      return JSON.parse(cachedDrivers) as Results[];
+      return JSON.parse(cachedDrivers) as Result[];
     }
 
     try {
-      const response = await this.get<Results[]>('/load/results');
+      const response = await this.get<Result[]>('/load/results');
       localStorage.setItem(cacheKey, JSON.stringify(response));
       console.log('Results data loaded from API');
       return response;

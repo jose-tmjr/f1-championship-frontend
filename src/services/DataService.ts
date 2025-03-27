@@ -1,11 +1,11 @@
-import type { Driver } from "@/Interfaces/Driver";
-import type { Races } from "@/Interfaces/Races";
-import type { Results } from "@/Interfaces/Results";
-import type { Team } from "@/Interfaces/Teams";
+import type { Driver } from "@/Interfaces/Driver.interface";
+import type { Race } from "@/Interfaces/Race.interface";
+import type { Result } from "@/Interfaces/Result.interface";
+import type { Team } from "@/Interfaces/Team.interface";
 import Repository from "@/repositories/Repository";
 
 class DataService {
-  public async loadData(): Promise<[Driver[], Team[], Races[], Results[]]> {
+  public async loadData(): Promise<[Driver[], Team[], Race[], Result[]]> {
     return await Promise.all([
       this.loadDrivers(),
       this.loadTeams(),
@@ -22,11 +22,11 @@ class DataService {
     return await Repository.getTeamsData();
   }
 
-  private async loadRaces(): Promise<Races[]> {
+  private async loadRaces(): Promise<Race[]> {
     return await Repository.getRacesData();
   }
 
-  private async loadResults(): Promise<Results[]> {
+  private async loadResults(): Promise<Result[]> {
     return await Repository.getResultsData();
   }
 }

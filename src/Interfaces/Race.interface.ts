@@ -1,4 +1,4 @@
-export interface Races {
+export interface Race {
   is_sprint: boolean;
   race_date: string;
   race_id: number;

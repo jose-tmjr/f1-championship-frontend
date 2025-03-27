@@ -14,6 +14,7 @@
     <table class="w-full text-left border-collapse">
       <thead>
         <tr class="bg-gray-800 text-white">
+          <th class="p-3 border border-gray-700">POS</th>
           <th class="p-3 border border-gray-700">Name</th>
           <th class="p-3 border border-gray-700">Team</th>
           <th class="p-3 border border-gray-700">Points</th>
@@ -21,10 +22,11 @@
       </thead>
       <tbody>
         <tr
-          v-for="driver in drivers"
+          v-for="(driver, index) in drivers"
           :key="driver.id"
           class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300 transition-colors"
         >
+          <td class="p-3 border border-gray-300 text-gray-900">{{ index + 1 }}</td>
           <td class="p-3 border border-gray-300 text-gray-900">{{ driver.name }}</td>
           <td class="p-3 border border-gray-300 text-gray-900">{{ driver.teamName }}</td>
           <td class="p-3 border border-gray-300 text-gray-900">{{ driver.points }}</td>
@@ -38,6 +40,7 @@
     <table class="w-full text-left border-collapse">
       <thead>
         <tr class="bg-gray-800 text-white">
+          <th class="p-3 border border-gray-700">POS</th>
           <th class="p-3 border border-gray-700">Team</th>
           <th class="p-3 border border-gray-700">Drivers</th>
           <th class="p-3 border border-gray-700">Points</th>
@@ -45,10 +48,11 @@
       </thead>
       <tbody>
         <tr
-          v-for="constructor in constructors"
+          v-for="(constructor, index) in constructors"
           :key="constructor.teamId"
           class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300 transition-colors"
         >
+          <td class="p-3 border border-gray-300 text-gray-900">{{ index + 1 }}</td>
           <td class="p-3 border border-gray-300 text-gray-900">{{ constructor.teamName }}</td>
           <td class="p-3 border border-gray-300 text-gray-900">{{ constructor.driversName }}</td>
           <td class="p-3 border border-gray-300 text-gray-900">{{ constructor.points }}</td>
