@@ -1,64 +1,55 @@
 <template>
-  <!-- Botão para limpar o cache no topo -->
-  <div class="p-6">
-    <button
-      @click="clearAppCache"
-      class="mb-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-    >
-      Clear Cache
-    </button>
-  </div>
+  <div class="home-view h-screen">
+    <!-- Botão para limpar o cache no topo -->
+    <div class="p-6">
+      <button @click="clearAppCache" class="mb-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+        Clear Cache
+      </button>
+    </div>
 
-  <div class="p-6">
-    <h1 class="text-2xl font-bold mb-4">Drivers</h1>
-    <table class="w-full text-left border-collapse">
-      <thead>
-        <tr class="bg-gray-800 text-white">
-          <th class="p-3 border border-gray-700">POS</th>
-          <th class="p-3 border border-gray-700">Name</th>
-          <th class="p-3 border border-gray-700">Team</th>
-          <th class="p-3 border border-gray-700">Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(driver, index) in drivers"
-          :key="driver.id"
-          class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300 transition-colors"
-        >
-          <td class="p-3 border border-gray-300 text-gray-900">{{ index + 1 }}</td>
-          <td class="p-3 border border-gray-300 text-gray-900">{{ driver.name }}</td>
-          <td class="p-3 border border-gray-300 text-gray-900">{{ driver.teamName }}</td>
-          <td class="p-3 border border-gray-300 text-gray-900">{{ driver.points }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="p-6 container">
+      <h1 class="text-2xl font-bold mb-4 text-white">Drivers</h1>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-dark text-white">
+            <th class="p-3">POS</th>
+            <th class="p-3">Name</th>
+            <th class="p-3">Team</th>
+            <th class="p-3">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(driver, index) in drivers" :key="driver.id" class="table-row">
+            <td class="p-3">{{ index + 1 }}</td>
+            <td class="p-3">{{ driver.name }}</td>
+            <td class="p-3">{{ driver.teamName }}</td>
+            <td class="p-3">{{ driver.points }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <div class="p-6">
-    <h1 class="text-2xl font-bold mb-4">Constructors</h1>
-    <table class="w-full text-left border-collapse">
-      <thead>
-        <tr class="bg-gray-800 text-white">
-          <th class="p-3 border border-gray-700">POS</th>
-          <th class="p-3 border border-gray-700">Team</th>
-          <th class="p-3 border border-gray-700">Drivers</th>
-          <th class="p-3 border border-gray-700">Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(constructor, index) in constructors"
-          :key="constructor.teamId"
-          class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300 transition-colors"
-        >
-          <td class="p-3 border border-gray-300 text-gray-900">{{ index + 1 }}</td>
-          <td class="p-3 border border-gray-300 text-gray-900">{{ constructor.teamName }}</td>
-          <td class="p-3 border border-gray-300 text-gray-900">{{ constructor.driversName }}</td>
-          <td class="p-3 border border-gray-300 text-gray-900">{{ constructor.points }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="p-6 container">
+      <h1 class="text-2xl font-bold mb-4 text-white">Constructors</h1>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-dark text-white">
+            <th class="p-3">POS</th>
+            <th class="p-3">Team</th>
+            <th class="p-3">Drivers</th>
+            <th class="p-3">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(constructor, index) in constructors" :key="constructor.teamId" class="table-row ">
+            <td class="p-3">{{ index + 1 }}</td>
+            <td class="p-3">{{ constructor.teamName }}</td>
+            <td class="p-3">{{ constructor.driversName }}</td>
+            <td class="p-3">{{ constructor.points }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -95,9 +86,3 @@ onMounted(() => {
   loadDrivers();
 });
 </script>
-
-<style scoped>
-h1 {
-  margin-bottom: 16px;
-}
-</style>
