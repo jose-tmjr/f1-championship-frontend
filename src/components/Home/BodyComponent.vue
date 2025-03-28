@@ -24,7 +24,7 @@
     <div class="wrap flex justify-center items-end gap-0">
       <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
         <img :class="`w-full h-40 object-scale-down bg-team-${drivers[1].teamId}`"
-          :src="`src/assets/images/${drivers[1].id}.png`" alt="Card Image" />
+          :src="`src/assets/images/drivers/${drivers[1].id}.png`" alt="Card Image" />
         <div class="bg-zinc-800 flex items-center">
           <div class="position">
             2nd
@@ -40,7 +40,7 @@
 
       <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
         <img :class="`w-full h-40 object-scale-down bg-team-${drivers[0].teamId}`"
-          :src="`src/assets/images/${drivers[0].id}.png`" alt="Card Image" />
+          :src="`src/assets/images/drivers/${drivers[0].id}.png`" alt="Card Image" />
         <div class="bg-zinc-800 flex items-center">
           <div class="position">
             1st
@@ -56,7 +56,7 @@
 
       <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
         <img :class="`w-full h-40 object-scale-down bg-team-${drivers[2].teamId}`"
-          :src="`src/assets/images/${drivers[2].id}.png`" alt="Card Image" />
+          :src="`src/assets/images/drivers/${drivers[2].id}.png`" alt="Card Image" />
         <div class="bg-zinc-800 flex items-center">
           <div class="position">
             3rd
@@ -91,6 +91,56 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="wrap flex justify-center items-end gap-0">
+      <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+        <img :class="`w-full h-40 object-scale-down bg-team-${constructors[1].teamId}`"
+          :src="`src/assets/images/constructors/${constructors[1].teamId}.png`" alt="Card Image" />
+        <div class="bg-zinc-800 flex items-center">
+          <div class="position">
+            2nd
+          </div>
+          <div class="driver">
+            <h2 class="text-xl font-bold text-white"> {{ constructors[1].teamName }}</h2>
+            <p class="text-white font-bold mt-2">
+              {{ constructors[1].points }} points
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
+        <img :class="`w-full h-40 object-scale-down bg-team-${constructors[0].teamId}`"
+          :src="`src/assets/images/constructors/${constructors[0].teamId}.png`" alt="Card Image" />
+        <div class="bg-zinc-800 flex items-center">
+          <div class="position">
+            1st
+          </div>
+          <div class="driver">
+            <h2 class="text-xl font-bold text-white"> {{ constructors[0].teamName }}</h2>
+            <p class="text-white font-bold mt-2">
+              {{ constructors[0].points }} points
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+        <img :class="`w-full h-40 object-scale-down bg-team-${constructors[2].teamId}`"
+          :src="`src/assets/images/constructors/${constructors[2].teamId}.png`" alt="Card Image" />
+        <div class="bg-zinc-800 flex items-center">
+          <div class="position">
+            3rd
+          </div>
+          <div class="driver">
+            <h2 class="text-xl font-bold text-white"> {{ constructors[2].teamName }}</h2>
+            <p class="text-white font-bold mt-2">
+              {{ constructors[2].points }} points
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="p-6 wrap">
