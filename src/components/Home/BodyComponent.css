@@ -72,3 +72,23 @@ main .wrap {
 .podium-card .driver {
   padding: 0 1rem;
 }
+
+.bg-team-1 {
+  background-image: linear-gradient(to right, #121F45, #CC1E4A, #FFC906);
+}
+
+.bg-team-2 {
+  background-image: linear-gradient(to right, #A6051A, #FFEB00);
+}
+
+.bg-team-3 {
+  background-image: linear-gradient(to right, #8cc3e2, #f2bdef);
+}
+
+.bg-team-4 {
+  background-image: linear-gradient(to right, #FF8000, #000000);
+}
+
+.bg-team-5 {
+  background-image: linear-gradient(to left, #000000, #52E252);
+}
