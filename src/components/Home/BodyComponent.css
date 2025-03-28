@@ -2,10 +2,8 @@ h1 {
   margin-bottom: 16px;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1.5rem;
+table {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .table-row {
@@ -28,9 +26,49 @@ h1 {
 }
 
 .home-view {
-  background-image: url('@/assets/images/bg-f1.jpg'); /* Caminho para a imagem */
-  background-size: cover; /* Faz a imagem cobrir toda a área */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita repetição da imagem */
-  min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+  background-image: url('@/assets/images/bg-f1.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  min-height: calc(100vh - 8rem);
+}
+
+main .wrap {
+  margin-top: 4rem;
+}
+
+.podium-card {
+  overflow: hidden;
+}
+
+.podium-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.podium-card .position {
+  height: 100%;
+  padding: 2rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.podium-card:nth-of-type(2) .position {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+.podium-card:nth-of-type(1) .position {
+  background-color: #C0C0C0;
+  color: #333333;
+}
+
+.podium-card:nth-of-type(3) .position {
+  background-color: #CD7F32; 
+  color: #333333;
+}
+
+.podium-card .driver {
+  padding: 0 1rem;
 }
