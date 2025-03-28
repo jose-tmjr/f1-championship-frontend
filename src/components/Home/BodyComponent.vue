@@ -21,154 +21,157 @@
   </div>
 
   <div v-if="!isLoading && !isError" class="home-view">
-    <div class="wrap flex justify-center items-end gap-0">
-      <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-        <img :class="`w-full h-40 object-scale-down bg-team-${drivers[1].teamId}`"
-          :src="`src/assets/images/drivers/${drivers[1].id}.png`" alt="Card Image" />
-        <div class="bg-zinc-800 flex items-center">
-          <div class="position">
-            2nd
+    <div class="main-top">
+      <div class="wrap flex justify-center items-end gap-0">
+        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+          <img :class="`w-full h-40 object-scale-down bg-team-${drivers[1].teamId}`"
+            :src="`src/assets/images/drivers/${drivers[1].id}.png`" alt="Card Image" />
+          <div class="bg-zinc-800 flex items-center">
+            <div class="position">
+              2nd
+            </div>
+            <div class="driver">
+              <h2 class="text-xl font-bold text-white"> {{ drivers[1].name }}</h2>
+              <p class="text-white font-bold mt-2">
+                {{ drivers[1].points }} points
+              </p>
+            </div>
           </div>
-          <div class="driver">
-            <h2 class="text-xl font-bold text-white"> {{ drivers[1].name }}</h2>
-            <p class="text-white font-bold mt-2">
-              {{ drivers[1].points }} points
-            </p>
+        </div>
+
+        <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
+          <img :class="`w-full h-40 object-scale-down bg-team-${drivers[0].teamId}`"
+            :src="`src/assets/images/drivers/${drivers[0].id}.png`" alt="Card Image" />
+          <div class="bg-zinc-800 flex items-center">
+            <div class="position">
+              1st
+            </div>
+            <div class="driver">
+              <h2 class="text-xl font-bold text-white"> {{ drivers[0].name }}</h2>
+              <p class="text-white font-bold mt-2">
+                {{ drivers[0].points }} points
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+          <img :class="`w-full h-40 object-scale-down bg-team-${drivers[2].teamId}`"
+            :src="`src/assets/images/drivers/${drivers[2].id}.png`" alt="Card Image" />
+          <div class="bg-zinc-800 flex items-center">
+            <div class="position">
+              3rd
+            </div>
+            <div class="driver">
+              <h2 class="text-xl font-bold text-white"> {{ drivers[2].name }}</h2>
+              <p class="text-white font-bold mt-2">
+                {{ drivers[2].points }} points
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
-        <img :class="`w-full h-40 object-scale-down bg-team-${drivers[0].teamId}`"
-          :src="`src/assets/images/drivers/${drivers[0].id}.png`" alt="Card Image" />
-        <div class="bg-zinc-800 flex items-center">
-          <div class="position">
-            1st
-          </div>
-          <div class="driver">
-            <h2 class="text-xl font-bold text-white"> {{ drivers[0].name }}</h2>
-            <p class="text-white font-bold mt-2">
-              {{ drivers[0].points }} points
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-        <img :class="`w-full h-40 object-scale-down bg-team-${drivers[2].teamId}`"
-          :src="`src/assets/images/drivers/${drivers[2].id}.png`" alt="Card Image" />
-        <div class="bg-zinc-800 flex items-center">
-          <div class="position">
-            3rd
-          </div>
-          <div class="driver">
-            <h2 class="text-xl font-bold text-white"> {{ drivers[2].name }}</h2>
-            <p class="text-white font-bold mt-2">
-              {{ drivers[2].points }} points
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-6 wrap">
-      <h1 class="text-2xl font-bold mb-4 text-white">Drivers</h1>
-      <table class="w-full text-left border-collapse">
-        <thead>
-          <tr class="bg-dark text-white">
-            <th class="p-3">POS</th>
-            <th class="p-3">Name</th>
-            <th class="p-3">Team</th>
-            <th class="p-3">Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(driver, index) in drivers" :key="driver.id" class="table-row">
-            <td class="p-3">{{ index + 1 }}</td>
-            <td class="p-3">{{ driver.name }}</td>
-            <td class="p-3">{{ driver.teamName }}</td>
-            <td class="p-3">{{ driver.points }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="wrap flex justify-center items-end gap-0">
-      <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-        <img :class="`w-full h-40 object-scale-down bg-team-${constructors[1].teamId}`"
-          :src="`src/assets/images/constructors/${constructors[1].teamId}.png`" alt="Card Image" />
-        <div class="bg-zinc-800 flex items-center">
-          <div class="position">
-            2nd
-          </div>
-          <div class="driver">
-            <h2 class="text-xl font-bold text-white"> {{ constructors[1].teamName }}</h2>
-            <p class="text-white font-bold mt-2">
-              {{ constructors[1].points }} points
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
-        <img :class="`w-full h-40 object-scale-down bg-team-${constructors[0].teamId}`"
-          :src="`src/assets/images/constructors/${constructors[0].teamId}.png`" alt="Card Image" />
-        <div class="bg-zinc-800 flex items-center">
-          <div class="position">
-            1st
-          </div>
-          <div class="driver">
-            <h2 class="text-xl font-bold text-white"> {{ constructors[0].teamName }}</h2>
-            <p class="text-white font-bold mt-2">
-              {{ constructors[0].points }} points
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-        <img :class="`w-full h-40 object-scale-down bg-team-${constructors[2].teamId}`"
-          :src="`src/assets/images/constructors/${constructors[2].teamId}.png`" alt="Card Image" />
-        <div class="bg-zinc-800 flex items-center">
-          <div class="position">
-            3rd
-          </div>
-          <div class="driver">
-            <h2 class="text-xl font-bold text-white"> {{ constructors[2].teamName }}</h2>
-            <p class="text-white font-bold mt-2">
-              {{ constructors[2].points }} points
-            </p>
-          </div>
-        </div>
+      <div class="p-6 wrap">
+        <h1 class="text-2xl font-bold mb-4 text-white">Drivers</h1>
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-dark text-white">
+              <th class="p-3">POS</th>
+              <th class="p-3">Name</th>
+              <th class="p-3">Team</th>
+              <th class="p-3">Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(driver, index) in drivers" :key="driver.id">
+              <td class="p-3">{{ index + 1 }}</td>
+              <td class="p-3">{{ driver.name }}</td>
+              <td class="p-3">{{ driver.teamName }}</td>
+              <td class="p-3">{{ driver.points }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <div class="p-6 wrap">
-      <h1 class="text-2xl font-bold mb-4 text-white">Constructors</h1>
-      <table class="w-full text-left border-collapse">
-        <thead>
-          <tr class="bg-dark text-white">
-            <th class="p-3">POS</th>
-            <th class="p-3">Team</th>
-            <th class="p-3">Drivers</th>
-            <th class="p-3"></th>
-            <th class="p-3">Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(constructor, index) in constructors" :key="constructor.teamId" class="table-row ">
-            <td class="p-3">{{ index + 1 }}</td>
-            <td class="p-3">{{ constructor.teamName }}</td>
-            <td class="p-3">{{ constructor.driversName }}</td>
-            <td class="p-3"><img class="w-20 h-auto object-contain"
-              :src="`src/assets/images/cars/${constructor.teamId}.png`" alt="Card Image" /></td>
-            <td class="p-3">{{ constructor.points }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="main-bottom bg-zinc-800">
+      <div class="wrap flex justify-center items-end gap-0">
+        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+          <img :class="`w-full h-40 object-scale-down bg-team-${constructors[1].teamId}`"
+            :src="`src/assets/images/constructors/${constructors[1].teamId}.png`" alt="Card Image" />
+          <div class="bg-zinc-800 flex items-center">
+            <div class="position">
+              2nd
+            </div>
+            <div class="driver">
+              <h2 class="text-xl font-bold text-white"> {{ constructors[1].teamName }}</h2>
+              <p class="text-white font-bold mt-2">
+                {{ constructors[1].points }} points
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
+          <img :class="`w-full h-40 object-scale-down bg-team-${constructors[0].teamId}`"
+            :src="`src/assets/images/constructors/${constructors[0].teamId}.png`" alt="Card Image" />
+          <div class="bg-zinc-800 flex items-center">
+            <div class="position">
+              1st
+            </div>
+            <div class="driver">
+              <h2 class="text-xl font-bold text-white"> {{ constructors[0].teamName }}</h2>
+              <p class="text-white font-bold mt-2">
+                {{ constructors[0].points }} points
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+          <img :class="`w-full h-40 object-scale-down bg-team-${constructors[2].teamId}`"
+            :src="`src/assets/images/constructors/${constructors[2].teamId}.png`" alt="Card Image" />
+          <div class="bg-zinc-800 flex items-center">
+            <div class="position">
+              3rd
+            </div>
+            <div class="driver">
+              <h2 class="text-xl font-bold text-white"> {{ constructors[2].teamName }}</h2>
+              <p class="text-white font-bold mt-2">
+                {{ constructors[2].points }} points
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 wrap">
+        <h1 class="text-2xl font-bold mb-4 text-white">Constructors</h1>
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-dark text-white">
+              <th class="p-3">POS</th>
+              <th class="p-3">Team</th>
+              <th class="p-3">Drivers</th>
+              <th class="p-3"></th>
+              <th class="p-3">Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(constructor, index) in constructors" :key="constructor.teamId">
+              <td class="p-3">{{ index + 1 }}</td>
+              <td class="p-3">{{ constructor.teamName }}</td>
+              <td class="p-3">{{ constructor.driversName }}</td>
+              <td class="p-3"><img class="w-20 h-auto object-contain"
+                  :src="`src/assets/images/cars/${constructor.teamId}.png`" alt="Card Image" /></td>
+              <td class="p-3">{{ constructor.points }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script lang="ts" setup>

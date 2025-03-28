@@ -2,31 +2,48 @@ h1 {
   margin-bottom: 16px;
 }
 
-table {
+.main-top table {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.table-row {
+.main-top tbody tr {
   color: white;
   transition: background-color 0.3s, color 0.3s;
   opacity: 0.8;
 }
 
-.table-row:nth-child(odd) {
+.main-top tbody tr:nth-child(odd) {
   background-color: var(--color-zinc-900);
 }
 
-.table-row:nth-child(even) {
+.main-top tbody tr:nth-child(even) {
   background-color: var(--color-zinc-800);
 }
 
-.table-row:hover {
+.main-top table tbody tr:hover {
   background-color: white;
   color: red;
 }
 
+.main-bottom table {
+  color: white;
+  background-color: transparente;
+}
+
+
+.main-bottom table tr { 
+  color: white;
+  transition: background-color 0.3s, color 0.3s; 
+  opacity: 0.8;
+  border-bottom: 1px solid white;
+}
+
+.main-bottom table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: red;
+}
+
 .home-view {
-  /* background-image: url('@/assets/images/bg-f1.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
