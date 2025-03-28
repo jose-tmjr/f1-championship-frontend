@@ -1,0 +1,36 @@
+h1 {
+  margin-bottom: 16px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.table-row {
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  opacity: 0.8;
+}
+
+.table-row:nth-child(odd) {
+  background-color: var(--color-zinc-900);
+}
+
+.table-row:nth-child(even) {
+  background-color: var(--color-zinc-800);
+}
+
+.table-row:hover {
+  background-color: white;
+  color: red;
+}
+
+.home-view {
+  background-image: url('@/assets/images/bg-f1.jpg'); /* Caminho para a imagem */
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  min-height: 100vh; /* Garante que ocupe toda a altura da tela */
+}

@@ -1,4 +1,4 @@
-export interface Results {
+export interface Result {
   driver_fastest_lap: string;
   driver_id: number;
   driver_start_position: number;

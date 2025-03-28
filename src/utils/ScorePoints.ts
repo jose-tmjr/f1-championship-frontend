@@ -1,5 +1,5 @@
-import type { Races } from "@/Interfaces/Races";
-import type { Results } from "@/Interfaces/Results";
+import type { Race } from "@/Interfaces/Race";
+import type { Result } from "@/Interfaces/Result";
 
 type Score = {
   is_sprint: boolean;
@@ -8,7 +8,7 @@ type Score = {
 };
 
 export const Scores: Score[] = [
-  // Full Races
+  // Full Race
   { is_sprint: false, points: 25, position: 1 },
   { is_sprint: false, points: 18, position: 2 },
   { is_sprint: false, points: 15, position: 3 },
@@ -20,7 +20,7 @@ export const Scores: Score[] = [
   { is_sprint: false, points: 2, position: 9 },
   { is_sprint: false, points: 1, position: 10 },
 
-  //Sprint Races
+  //Sprint Race
   { is_sprint: true, points: 8, position: 1 },
   { is_sprint: true, points: 7, position: 2 },
   { is_sprint: true, points: 6, position: 3 },
@@ -31,7 +31,7 @@ export const Scores: Score[] = [
   { is_sprint: true, points: 1, position: 8 },
 ];
 
-export function calculateRacePoint(race: Races, result: Results|undefined): number {
+export function calculateRacePoint(race: Race, result: Result | undefined): number {
   if (!result) return 0;
 
   const score = Scores.find(
@@ -40,4 +40,3 @@ export function calculateRacePoint(race: Races, result: Results|undefined): numb
 
   return score?.points || 0;
 }
-
