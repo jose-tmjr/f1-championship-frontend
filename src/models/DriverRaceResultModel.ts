@@ -1,7 +1,7 @@
 import type { Driver } from "@/Interfaces/Driver";
-import type { Races } from "@/Interfaces/Races";
-import type { Results } from "@/Interfaces/Results";
-import type { Team } from "@/Interfaces/Teams";
+import type { Race } from "@/Interfaces/Race";
+import type { Result } from "@/Interfaces/Result";
+import type { Team } from "@/Interfaces/Team";
 import { calculateRacePoint } from "@/utils/ScorePoints";
 
 export default class DriverRaceResultModel {
@@ -15,10 +15,9 @@ export default class DriverRaceResultModel {
   points: number;
   gridResult: number;
 
-  constructor(driver: Driver, team: Team, result: Results, race: Races) {
-
+  constructor(driver: Driver, team: Team, result: Result, race: Race) {
     if (driver.team_id !== team.team_id) {
-      throw new Error('Driver and Team are not from the same team');
+      throw new Error("Driver and Team are not from the same team");
     }
 
     this.driverId = driver.driver_id;
@@ -32,6 +31,5 @@ export default class DriverRaceResultModel {
     this.driverFinalPosition = result.driver_final_position;
     this.gridResult = result.grid_result;
     this.points = calculateRacePoint(race, result);
-
   }
 }

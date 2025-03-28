@@ -65,7 +65,7 @@ class DriverRepository extends BaseRepository {
     try {
       const response = await this.get<Race[]>('/load/races');
       localStorage.setItem(cacheKey, JSON.stringify(response));
-      console.log('Races data loaded from API');
+      console.log('Race data loaded from API');
       return response;
 
     } catch (error) {
@@ -86,7 +86,7 @@ class DriverRepository extends BaseRepository {
     try {
       const response = await this.get<Result[]>('/load/results');
       localStorage.setItem(cacheKey, JSON.stringify(response));
-      console.log('Results data loaded from API');
+      console.log('Result data loaded from API');
       return response;
 
     } catch (error) {

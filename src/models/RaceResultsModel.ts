@@ -1,4 +1,4 @@
-import type { Races } from "@/Interfaces/Races";
+import type { Race } from "@/Interfaces/Race";
 import type DriverRaceResultModel from "./DriverRaceResultModel";
 
 export default class RaceResultsModel {
@@ -9,12 +9,14 @@ export default class RaceResultsModel {
   raceName: string;
   driverResults: DriverRaceResultModel[];
 
-  constructor(race: Races, driverResults: DriverRaceResultModel[]) {
+  constructor(race: Race, driverResults: DriverRaceResultModel[]) {
     this.raceId = race.race_id;
     this.isSprint = race.is_sprint;
     this.raceDate = race.race_date;
     this.raceLocation = race.race_location;
     this.raceName = race.race_name;
-    this.driverResults = driverResults.sort((a, b) => a.driverFinalPosition - b.driverFinalPosition);
+    this.driverResults = driverResults.sort(
+      (a, b) => a.driverFinalPosition - b.driverFinalPosition
+    );
   }
 }
