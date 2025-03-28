@@ -22,56 +22,57 @@
 
   <div v-if="!isLoading && !isError" class="home-view">
     <div class="main-top">
-      <div class="wrap flex justify-center items-end gap-0">
-        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-          <img :class="`w-full h-40 object-scale-down bg-team-${drivers[1].teamId}`"
-            :src="`src/assets/images/drivers/${drivers[1].id}.png`" alt="Card Image" />
-          <div class="bg-zinc-800 flex items-center">
-            <div class="position">
-              2nd
-            </div>
-            <div class="driver">
-              <h2 class="text-xl font-bold text-white"> {{ drivers[1].name }}</h2>
-              <p class="text-white font-bold mt-2">
-                {{ drivers[1].points }} points
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
-          <img :class="`w-full h-40 object-scale-down bg-team-${drivers[0].teamId}`"
-            :src="`src/assets/images/drivers/${drivers[0].id}.png`" alt="Card Image" />
-          <div class="bg-zinc-800 flex items-center">
-            <div class="position">
-              1st
-            </div>
-            <div class="driver">
-              <h2 class="text-xl font-bold text-white"> {{ drivers[0].name }}</h2>
-              <p class="text-white font-bold mt-2">
-                {{ drivers[0].points }} points
-              </p>
+      <div class="highlight-banners">
+        <div class="wrap flex justify-center items-end gap-0">
+          <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+            <img :class="`w-full h-40 object-scale-down bg-team-${drivers[1].teamId}`"
+              :src="`src/assets/images/drivers/${drivers[1].id}.png`" alt="Card Image" />
+            <div class="bg-zinc-800 flex items-center">
+              <div class="position">
+                2nd
+              </div>
+              <div class="driver">
+                <h2 class="text-xl font-bold text-white"> {{ drivers[1].name }}</h2>
+                <p class="text-white font-bold mt-2">
+                  {{ drivers[1].points }} points
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-          <img :class="`w-full h-40 object-scale-down bg-team-${drivers[2].teamId}`"
-            :src="`src/assets/images/drivers/${drivers[2].id}.png`" alt="Card Image" />
-          <div class="bg-zinc-800 flex items-center">
-            <div class="position">
-              3rd
+          <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
+            <img :class="`w-full h-40 object-scale-down bg-team-${drivers[0].teamId}`"
+              :src="`src/assets/images/drivers/${drivers[0].id}.png`" alt="Card Image" />
+            <div class="bg-zinc-800 flex items-center">
+              <div class="position">
+                1st
+              </div>
+              <div class="driver">
+                <h2 class="text-xl font-bold text-white"> {{ drivers[0].name }}</h2>
+                <p class="text-white font-bold mt-2">
+                  {{ drivers[0].points }} points
+                </p>
+              </div>
             </div>
-            <div class="driver">
-              <h2 class="text-xl font-bold text-white"> {{ drivers[2].name }}</h2>
-              <p class="text-white font-bold mt-2">
-                {{ drivers[2].points }} points
-              </p>
+          </div>
+
+          <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
+            <img :class="`w-full h-40 object-scale-down bg-team-${drivers[2].teamId}`"
+              :src="`src/assets/images/drivers/${drivers[2].id}.png`" alt="Card Image" />
+            <div class="bg-zinc-800 flex items-center">
+              <div class="position">
+                3rd
+              </div>
+              <div class="driver">
+                <h2 class="text-xl font-bold text-white"> {{ drivers[2].name }}</h2>
+                <p class="text-white font-bold mt-2">
+                  {{ drivers[2].points }} points
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="p-6 wrap">
         <h1 class="text-2xl font-bold mb-4 text-white">Drivers</h1>
         <table class="w-full text-left border-collapse">
