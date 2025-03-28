@@ -1,6 +1,9 @@
 <template>
     <header>
         <div class="wrap">
+            <div class="logo">
+                <img :src="`src/assets/logo.png`" alt="Tiltados F1" title="Tiltados F1" />
+            </div>
             <nav>
                 <ul>
                     <li><router-link to="/">Home</router-link></li>
