@@ -1,16 +1,18 @@
 @import "./base.css";
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: f1;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./fonts/f1.woff2") format("woff2");
+}
 body {
   margin: 0 auto;
+  font-family: f1, sans-serif;
 }
-
-/* #app {
-  min-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-} */
 
 a,
 .green {
