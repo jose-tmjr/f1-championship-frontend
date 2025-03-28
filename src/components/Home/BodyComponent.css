@@ -26,10 +26,10 @@ table {
 }
 
 .home-view {
-  background-image: url('@/assets/images/bg-f1.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  /* background-image: url('@/assets/images/bg-f1.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: calc(100vh - 8rem);
 }
@@ -65,7 +65,7 @@ main .wrap {
 }
 
 .podium-card:nth-of-type(3) .position {
-  background-color: #CD7F32; 
+  background-color: #CD7F32;
   color: #333333;
 }
 
@@ -74,7 +74,7 @@ main .wrap {
 }
 
 .bg-team-1 {
-  background-image: linear-gradient(to right, #121F45, #CC1E4A, #FFC906);
+  background-image: linear-gradient(to right, #FFC906, #121F45);
 }
 
 .bg-team-2 {

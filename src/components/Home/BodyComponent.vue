@@ -151,6 +151,7 @@
             <th class="p-3">POS</th>
             <th class="p-3">Team</th>
             <th class="p-3">Drivers</th>
+            <th class="p-3"></th>
             <th class="p-3">Points</th>
           </tr>
         </thead>
@@ -159,6 +160,8 @@
             <td class="p-3">{{ index + 1 }}</td>
             <td class="p-3">{{ constructor.teamName }}</td>
             <td class="p-3">{{ constructor.driversName }}</td>
+            <td class="p-3"><img class="w-20 h-auto object-contain"
+              :src="`src/assets/images/cars/${constructor.teamId}.png`" alt="Card Image" /></td>
             <td class="p-3">{{ constructor.points }}</td>
           </tr>
         </tbody>
