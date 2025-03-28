@@ -4,9 +4,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    color: #fff;    
+    color: #fff;
     position: fixed;
-    background-color: #181818;
+    background-color: #131313;
     top: 0;
     height: 4rem;
     z-index: 1000;
@@ -24,7 +24,12 @@ li {
 }
 
 li a {
-    color: var(--color-blue-500);
+    color: var(--color-white-500);
+}
+
+li a:hover {
+    color: var(--color-red-500);
+    background-color: transparent;
 }
 
 header .wrap {
