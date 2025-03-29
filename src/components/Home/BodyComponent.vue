@@ -24,53 +24,14 @@
     <div class="main-top">
       <div class="highlight-banners">
         <div class="wrap flex justify-center items-end gap-0">
-          <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-            <img :class="`w-full h-40 object-scale-down bg-team-${drivers[1].teamId}`"
-              :src="`src/assets/images/drivers/${drivers[1].id}.png`" alt="Card Image" />
-            <div class="bg-zinc-800 flex items-center">
-              <div class="position">
-                2nd
-              </div>
-              <div class="driver">
-                <h2 class="text-xl font-bold text-white"> {{ drivers[1].name }}</h2>
-                <p class="text-white font-bold mt-2">
-                  {{ drivers[1].points }} points
-                </p>
-              </div>
-            </div>
-          </div>
+          <HighlightCard :position="2" :name="drivers[1].name" :points="drivers[1].points" :imageId="drivers[1].id"
+            :bgId="drivers[1].teamId" />
 
-          <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
-            <img :class="`w-full h-40 object-scale-down bg-team-${drivers[0].teamId}`"
-              :src="`src/assets/images/drivers/${drivers[0].id}.png`" alt="Card Image" />
-            <div class="bg-zinc-800 flex items-center">
-              <div class="position">
-                1st
-              </div>
-              <div class="driver">
-                <h2 class="text-xl font-bold text-white"> {{ drivers[0].name }}</h2>
-                <p class="text-white font-bold mt-2">
-                  {{ drivers[0].points }} points
-                </p>
-              </div>
-            </div>
-          </div>
+          <HighlightCard :position="1" :name="drivers[0].name" :points="drivers[0].points" :imageId="drivers[0].id"
+            :bgId="drivers[0].teamId" />
 
-          <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-            <img :class="`w-full h-40 object-scale-down bg-team-${drivers[2].teamId}`"
-              :src="`src/assets/images/drivers/${drivers[2].id}.png`" alt="Card Image" />
-            <div class="bg-zinc-800 flex items-center">
-              <div class="position">
-                3rd
-              </div>
-              <div class="driver">
-                <h2 class="text-xl font-bold text-white"> {{ drivers[2].name }}</h2>
-                <p class="text-white font-bold mt-2">
-                  {{ drivers[2].points }} points
-                </p>
-              </div>
-            </div>
-          </div>
+          <HighlightCard :position="3" :name="drivers[2].name" :points="drivers[2].points" :imageId="drivers[2].id"
+            :bgId="drivers[2].teamId" />
         </div>
       </div>
       <div class="p-6 wrap">
@@ -98,53 +59,14 @@
 
     <div class="main-bottom bg-zinc-800">
       <div class="wrap flex justify-center items-end gap-0">
-        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-          <img :class="`w-full h-40 object-scale-down bg-team-${constructors[1].teamId}`"
-            :src="`src/assets/images/constructors/${constructors[1].teamId}.png`" alt="Card Image" />
-          <div class="bg-zinc-800 flex items-center">
-            <div class="position">
-              2nd
-            </div>
-            <div class="driver">
-              <h2 class="text-xl font-bold text-white"> {{ constructors[1].teamName }}</h2>
-              <p class="text-white font-bold mt-2">
-                {{ constructors[1].points }} points
-              </p>
-            </div>
-          </div>
-        </div>
+        <HighlightCard :is-driver="false" :position="2" :name="constructors[1].teamName"
+          :points="constructors[1].points" :imageId="constructors[1].teamId" :bgId="constructors[1].teamId" />
 
-        <div class="w-75 bg-white rounded-lg shadow-md overflow-hidden m-10 podium-card">
-          <img :class="`w-full h-40 object-scale-down bg-team-${constructors[0].teamId}`"
-            :src="`src/assets/images/constructors/${constructors[0].teamId}.png`" alt="Card Image" />
-          <div class="bg-zinc-800 flex items-center">
-            <div class="position">
-              1st
-            </div>
-            <div class="driver">
-              <h2 class="text-xl font-bold text-white"> {{ constructors[0].teamName }}</h2>
-              <p class="text-white font-bold mt-2">
-                {{ constructors[0].points }} points
-              </p>
-            </div>
-          </div>
-        </div>
+        <HighlightCard :is-driver="false" :position="1" :name="constructors[0].teamName"
+          :points="constructors[0].points" :imageId="constructors[0].teamId" :bgId="constructors[0].teamId" />
 
-        <div class="w-60 bg-white rounded-lg shadow-md overflow-hidden podium-card">
-          <img :class="`w-full h-40 object-scale-down bg-team-${constructors[2].teamId}`"
-            :src="`src/assets/images/constructors/${constructors[2].teamId}.png`" alt="Card Image" />
-          <div class="bg-zinc-800 flex items-center">
-            <div class="position">
-              3rd
-            </div>
-            <div class="driver">
-              <h2 class="text-xl font-bold text-white"> {{ constructors[2].teamName }}</h2>
-              <p class="text-white font-bold mt-2">
-                {{ constructors[2].points }} points
-              </p>
-            </div>
-          </div>
-        </div>
+        <HighlightCard :is-driver="false" :position="3" :name="constructors[2].teamName"
+          :points="constructors[2].points" :imageId="constructors[2].teamId" :bgId="constructors[2].teamId" />
       </div>
 
       <div class="p-6 wrap">
@@ -181,6 +103,7 @@ import { ref, onMounted } from "vue";
 import HomeService from "@/services/HomeService";
 import type DriverModel from "@/models/driverModel";
 import type ConstructorModel from "@/models/constructorModel";
+import HighlightCard from './widgets/HighlightCard.vue';
 
 const drivers = ref<DriverModel[]>([]);
 const constructors = ref<ConstructorModel[]>([]);
