@@ -6,4 +6,4 @@
     </footer>
 </template>
 
-<style src="./FooterComponent.css"></style>
+<style src="@/components/Footer/FooterComponent.css"></style>
