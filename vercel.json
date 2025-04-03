@@ -4,5 +4,6 @@
             "source": "/api/:path*",
             "destination": "https://f1-championship-api.onrender.com/:path*"
         }
-    ]
+    ],
+    "public": true
 }
