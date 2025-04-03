@@ -87,7 +87,7 @@
               <td class="p-3">{{ constructor.teamName }}</td>
               <td class="p-3">{{ constructor.driversName }}</td>
               <td class="p-3"><img class="w-20 h-auto object-contain"
-                  :src="`src/assets/images/cars/${constructor.teamId}.png`" alt="Card Image" /></td>
+                  :src="`assets/images/cars/${constructor.teamId}.png`" alt="Card Image" /></td>
               <td class="p-3">{{ constructor.points }}</td>
             </tr>
           </tbody>
