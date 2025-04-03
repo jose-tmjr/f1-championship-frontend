@@ -20,9 +20,10 @@
     </header>
 </template>
 
+<style src="./HeaderComponent.css"></style>
+
 <script lang="ts" setup>
 import { clearCache } from "@/utils/CacheUtils";
-import './HeaderComponent.css';
 
 function clearAppCache() {
     clearCache();

@@ -6,6 +6,4 @@
     </footer>
 </template>
 
-<script lang="ts" setup>
-import './FooterComponent.css';
-</script>
+<style src="./FooterComponent.css"></style>
