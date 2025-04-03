@@ -1,8 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/",
-            "destination": "https://f1-championship-frontend.vercel.app"
+            "source": "/api/:path*",
+            "destination": "https://f1-championship-backend.vercel.app/api/:path*"
         }
     ]
 }
