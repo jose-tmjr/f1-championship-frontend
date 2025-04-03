@@ -97,8 +97,9 @@
   </div>
 </template>
 
+<style src="./BodyComponent.css"></style>
+
 <script lang="ts" setup>
-import './bodyComponent.css';
 import { ref, onMounted } from "vue";
 import HomeService from "@/services/HomeService";
 import type DriverModel from "@/models/driverModel";
