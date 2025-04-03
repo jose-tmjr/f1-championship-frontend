@@ -1,0 +1,19 @@
+{
+    "redirects": [
+        {
+            "source": "/assets/:filePath",
+            "destination": "https://f1-championship-frontend.vercel.app/assets/:filePath",
+            "permanent": true
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "https://f1-championship-api.onrender.com/:path*"
+        },
+        {
+            "source": "/",
+            "destination": "https://f1-championship-frontend.vercel.app"
+        }
+    ]
+}
