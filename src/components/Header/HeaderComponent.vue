@@ -2,7 +2,7 @@
     <header>
         <div class="wrap">
             <div class="logo">
-                <img :src="`src/assets/logo.png`" alt="Tiltados F1" title="Tiltados F1" />
+                <img :src="`/assets/logo.png`" alt="Tiltados F1" title="Tiltados F1" />
             </div>
             <nav>
                 <ul>
