@@ -20,7 +20,7 @@
     </header>
 </template>
 
-<style src="./HeaderComponent.css"></style>
+<style src="@/components/Header/HeaderComponent.css"></style>
 
 <script lang="ts" setup>
 import { clearCache } from "@/utils/CacheUtils";

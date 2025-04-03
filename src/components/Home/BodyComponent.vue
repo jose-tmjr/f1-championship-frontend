@@ -97,7 +97,7 @@
   </div>
 </template>
 
-<style src="./BodyComponent.css"></style>
+<style src="@/components/Home/BodyComponent.css"></style>
 
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
