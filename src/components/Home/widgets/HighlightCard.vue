@@ -1,7 +1,6 @@
 <template>
     <div :class="['bg-white rounded-lg shadow-md overflow-hidden podium-card', positionClass]">
-        <img :class="`w-full h-40 object-scale-down bg-team-${bgId}`" :src="bgImage"
-            :alt="`assets/images/constructors/${bgId}.png`" />
+        <img :class="`w-full h-40 object-scale-down bg-team-${bgId}`" :src="bgImage" :alt="bgImage" />
         <div class="bg-zinc-800 flex items-center">
             <div class="position flex items-center self-stretch">
                 <p>{{ position }}{{ positionSuffix }}</p>
