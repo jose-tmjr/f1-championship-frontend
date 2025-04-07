@@ -1,0 +1,19 @@
+@media only screen and (max-width: 768px) {
+    .podium {
+        flex-wrap: wrap;
+    }
+    .podium-card {
+        width: 100%;
+        padding: 0;
+        margin: 1rem 0;
+    }
+    .podium-card:nth-child(1) {
+        order: 2;
+    }
+    .podium-card:nth-child(2) {
+        order: 1;
+    }
+    .podium-card:nth-child(3) {
+        order: 3;
+    }
+}
