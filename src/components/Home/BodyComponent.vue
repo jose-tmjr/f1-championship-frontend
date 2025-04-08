@@ -23,7 +23,7 @@
   <div v-if="!isLoading && !isError" class="home-view">
     <div class="main-top">
       <div class="highlight-banners">
-        <div class="wrap flex justify-center items-end gap-0">
+        <div class="wrap flex justify-center items-end gap-0 podium">
           <HighlightCard :position="2" :name="drivers[1].name" :points="drivers[1].points" :imageId="drivers[1].id"
             :bgId="drivers[1].teamId" />
 
@@ -58,7 +58,7 @@
     </div>
 
     <div class="main-bottom bg-zinc-800">
-      <div class="wrap flex justify-center items-end gap-0">
+      <div class="wrap flex justify-center items-end gap-0 podium">
         <HighlightCard :is-driver="false" :position="2" :name="constructors[1].teamName"
           :points="constructors[1].points" :imageId="constructors[1].teamId" :bgId="constructors[1].teamId" />
 
@@ -98,6 +98,7 @@
 </template>
 
 <style src="@/components/Home/BodyComponent.css"></style>
+<style src="@/components/Home/BodyMobileComponent.css"></style>	
 
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
