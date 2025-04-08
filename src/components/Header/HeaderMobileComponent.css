@@ -1,0 +1,77 @@
+/* Esconde a navbar desktop no mobile */
+@media only screen and (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    header .wrap {
+        justify-content: start;
+    }
+
+    .update-button {
+        margin-left: auto;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 20;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background: white;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    .hamburger span.open:nth-child(1) {
+        transform: rotate(45deg) translate(5.3px, 5.3px);
+    }
+
+    .hamburger span.open:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger span.open:nth-child(3) {
+        transform: rotate(-45deg) translate(5.3px, -5.3px);
+    }
+
+    .mobile-nav {
+        display: block;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        right: 20%;
+        background-color: #111;
+        z-index: 10;
+        padding: 1rem;
+        height: 100vh;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .mobile-nav li {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
