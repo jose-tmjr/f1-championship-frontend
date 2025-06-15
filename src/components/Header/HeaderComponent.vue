@@ -48,7 +48,7 @@ import { clearCache } from "@/utils/CacheUtils";
 const menuItems = ref([
     { path: "/", label: "Home" },
     { path: "/drivers", label: "Drivers" },
-    { path: "/constructors", label: "Constructors" }
+    { path: "/races", label: "Races" }
 ]);
 
 const isMenuOpen = ref(false);

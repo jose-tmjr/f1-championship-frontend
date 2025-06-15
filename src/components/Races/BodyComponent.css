@@ -1,0 +1,169 @@
+h1 {
+  margin-bottom: 16px;
+}
+
+.main-top table {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.main-top tbody tr {
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  opacity: 0.8;
+}
+
+.main-top tbody tr:nth-child(odd) {
+  background-color: var(--color-zinc-900);
+}
+
+.main-top tbody tr:nth-child(even) {
+  background-color: var(--color-zinc-800);
+}
+
+.main-top table tbody tr:hover {
+  background-color: white;
+  color: red;
+}
+
+.main-bottom table {
+  color: white;
+  background-color: transparente;
+}
+
+
+.main-bottom table tr {
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  opacity: 0.8;
+  border-bottom: 1px solid white;
+}
+
+.main-bottom table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: red;
+}
+
+.home-view {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: calc(100vh - 8rem);
+}
+
+main .wrap {
+  margin-top: 4rem;
+}
+
+.wrap-page {
+  margin-top: 4rem;
+  max-width: 2160px;
+  margin: 0 auto;
+  padding: 9rem;
+}
+
+.podium-card {
+  z-index: 100;
+  overflow: hidden;
+}
+
+.podium-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.podium-card .position {
+  padding: 1rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.podium-card:nth-of-type(2) .position {
+  background-color: #FFD700;
+  color: #333333;
+}
+
+.podium-card:nth-of-type(1) .position {
+  background-color: #C0C0C0;
+  color: #333333;
+}
+
+.podium-card:nth-of-type(3) .position {
+  background-color: #CD7F32;
+  color: #333333;
+}
+
+.podium-card .driver {
+  padding: 0 1rem;
+}
+
+.bg-team-1 {
+  background-image: linear-gradient(to bottom, #121F45, #121F45, #FFC906);
+}
+
+.bg-team-2 {
+  background-image: linear-gradient(to right, #A6051A, #FFEB00);
+}
+
+.bg-team-3 {
+  background-image: linear-gradient(to right, #8cc3e2, #f2bdef);
+}
+
+.bg-team-4 {
+  background-image: linear-gradient(to right, #FF8000, #000000);
+}
+
+.bg-team-5 {
+  background-image: linear-gradient(to left, #000000, #52E252);
+}
+
+.main-top .highlight-banners {
+  position: relative;
+  height: 100%;
+  background:
+      linear-gradient(45deg, #000000 25%, transparent 25%),
+      linear-gradient(-45deg, #000000 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #000000 75%),
+      linear-gradient(-45deg, transparent 75%, #000000 75%),
+      linear-gradient(to bottom, rgba(33, 33, 33, 0.2), rgba(33, 33, 33, 0.2));
+  background-size: 40px 40px;
+  background-color: rgba(33, 33, 33, 0.2);
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px, 0 50%;
+  overflow: hidden;
+}
+
+.main-top .highlight-banners::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 57%;
+  background: linear-gradient(
+      90deg,
+      rgba(33, 33, 33, 0.1),
+      rgba(33, 33, 33, 0.5),
+      rgba(33, 33, 33, 0.1)
+  );
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  animation: wave 3s infinite linear;
+}
+
+.main-top .highlight-banners::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 43%;
+  background-color: #181818;
+}
+
+@keyframes wave {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(100%);
+  }
+}

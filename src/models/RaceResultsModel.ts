@@ -1,7 +1,7 @@
 import type { Race } from "@/Interfaces/Race";
 import type DriverRaceResultModel from "./DriverRaceResultModel";
 
-export default class RaceResultsModel {
+class RaceResultsModel {
   raceId: number;
   isSprint: boolean;
   raceDate: string;
@@ -20,3 +20,5 @@ export default class RaceResultsModel {
     );
   }
 }
+
+  export default RaceResultsModel;
