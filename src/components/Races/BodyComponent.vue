@@ -25,9 +25,9 @@
       <div class="flex flex-wrap gap-4">
         <div v-for="(race) in races" :key="race.raceId"
           class="bg-white rounded-lg shadow-md p-6 w-130 h-70 flex flex-col">
-          <h2 class="text-lg font-bold text-gray-800 mb-2">{{ race.raceName }}</h2>
+          <h2 class="text-lg font-bold text-zinc-800 mb-2">{{ race.raceName }}</h2>
           <div v-if="race.driverResults.length > 0" class="mb-4">
-            <h3 class="text-md font-semibold text-gray-700">Top Drivers:</h3>
+            <h3 class="text-md font-semibold text-zinc-700">Top Drivers:</h3>
             <div class="flex justify-center items-end gap-0">
               <div :class="['bg-white rounded-lg shadow-md overflow-hidden podium-card', positionClass(2)]">
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[1].driverTeamId}`"
@@ -72,6 +72,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div v-if="race.driverResults.length === 0" class="flex flex-1 items-center justify-center">
+            <img :src="`assets/images/races/${race.raceLocation}.png`" class="h-7/10 w-7/10 object-contain"/>
           </div>
         </div>
       </div>
