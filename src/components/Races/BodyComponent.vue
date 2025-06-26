@@ -23,23 +23,22 @@
     <div class="wrap-page">
       <h1 class="text-2xl font-bold mb-4 text-white">Races</h1>
       <div class="flex flex-wrap gap-4">
-        <div v-for="(race) in races" :key="race.raceId"
-          class="bg-white rounded-lg shadow-md p-6 w-130 h-70 flex flex-col">
+        <div v-for="(race) in races" :key="race.raceId" class="bg-white rounded-lg shadow-md card flex flex-col">
           <h2 class="text-lg font-bold text-zinc-800 mb-2">{{ race.raceName }}</h2>
           <div v-if="race.driverResults.length > 0" class="mb-4">
             <h3 class="text-md font-semibold text-zinc-700">Top Drivers:</h3>
-            <div class="flex justify-center items-end gap-0">
+            <div class="flex justify-center items-end gap-1">
               <div :class="['bg-white rounded-lg shadow-md overflow-hidden podium-card', positionClass(2)]">
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[1].driverTeamId}`"
                   :src="`assets/images/drivers/${race.driverResults[1].driverId}.png`"
                   :alt="`assets/images/drivers/${race.driverResults[1].driverId}.png`" />
-                <div class="bg-zinc-800 flex items-center">
+                <div class="bg-zinc-800 flex flex-col sm:flex-row items-center sm:items-center">
                   <div class="position flex items-center self-stretch">
-                    <p>2nd</p>
+                    <p class="w-full text-center">2nd</p>
                   </div>
-                  <div class="driver">
+                  <div class="driver mt-1 sm:mt-0">
                     <h6 class="text-base font-bold text-white line-clamp-2"
-                      :title="`${race.driverResults[1].driverName}`"> {{ race.driverResults[1].driverName }}</h6>
+                      :title="`${race.driverResults[1].driverName}`">{{ race.driverResults[1].driverName }}</h6>
                   </div>
                 </div>
               </div>
@@ -47,13 +46,13 @@
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[0].driverTeamId}`"
                   :src="`assets/images/drivers/${race.driverResults[0].driverId}.png`"
                   :alt="`assets/images/drivers/${race.driverResults[0].driverId}.png`" />
-                <div class="bg-zinc-800 flex items-center">
+                <div class="bg-zinc-800 flex flex-col sm:flex-row items-center sm:items-center">
                   <div class="position flex items-center self-stretch">
-                    <p>1st</p>
+                    <p class="w-full text-center">1st</p>
                   </div>
-                  <div class="driver">
+                  <div class="driver mt-1 sm:mt-0">
                     <h2 class="text-base font-bold text-white line-clamp-2"
-                      :title="`${race.driverResults[0].driverName}`"> {{ race.driverResults[0].driverName }}</h2>
+                      :title="`${race.driverResults[0].driverName}`">{{ race.driverResults[0].driverName }}</h2>
                   </div>
                 </div>
               </div>
@@ -61,20 +60,20 @@
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[2].driverTeamId}`"
                   :src="`assets/images/drivers/${race.driverResults[2].driverId}.png`"
                   :alt="`assets/images/drivers/${race.driverResults[2].driverId}.png`" />
-                <div class="bg-zinc-800 flex items-center">
+                <div class="bg-zinc-800 flex flex-col sm:flex-row items-center sm:items-center">
                   <div class="position flex items-center self-stretch">
-                    <p>3rd</p>
+                    <p class="w-full text-center">3rd</p>
                   </div>
-                  <div class="driver">
+                  <div class="driver mt-1 sm:mt-0">
                     <h6 class="text-base font-bold text-white line-clamp-2"
-                      :title="`${race.driverResults[2].driverName}`"> {{ race.driverResults[2].driverName }}</h6>
+                      :title="`${race.driverResults[2].driverName}`">{{ race.driverResults[2].driverName }}</h6>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div v-if="race.driverResults.length === 0" class="flex flex-1 items-center justify-center">
-            <img :src="`assets/images/races/${race.raceLocation}.png`" class="h-7/10 w-7/10 object-contain"/>
+            <img :src="`assets/images/races/${race.raceLocation}.png`" class="h-7/10 w-7/10 object-contain" />
           </div>
         </div>
       </div>
@@ -83,6 +82,8 @@
 </template>
 
 <style src="@/components/Races/BodyComponent.css"></style>
+<style src="@/components/Races/BodyMobileComponent.css"></style>
+
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import RaceService from "@/services/RaceService";
@@ -96,7 +97,6 @@ async function loadRaces() {
     const service = await RaceService.create();
 
     await service.getRacesResults().then((response) => {
-      console.log("🚀 ~ awaitservice.getRacesResults ~ response:", response);
       races.value = response;
     });
 
