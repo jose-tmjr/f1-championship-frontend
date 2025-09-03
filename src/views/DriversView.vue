@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import BodyComponent from '@/components/Drivers/BodyComponent.vue';
+
+</script>
+
 <template>
-    <div>
-        <b>2024 Drivers Standings</b>
-    </div>
+  <main>
+    <BodyComponent />
+  </main>
 </template>
