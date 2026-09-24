@@ -8,12 +8,12 @@ export abstract class BaseRepository {
     return response.data;
   }
 
-  protected async post<T>(url:string, data: any) {
+  protected async post<T>(url:string, data: unknown) {
     const response = await this.http.post<T>(url, data);
     return response.data;
   }
 
-  protected async put<T>(url:string, data: any) {
+  protected async put<T>(url:string, data: unknown) {
     const response = await this.http.put<T>(url, data);
     return response.data;
   }

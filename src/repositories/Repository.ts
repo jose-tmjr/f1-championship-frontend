@@ -25,18 +25,19 @@ class DriverRepository extends BaseRepository {
   private async fetchAndCache<T>(resource: CacheKeys, season: string): Promise<T> {
     const cacheKey = `${resource}-${season}`;
 
-    const cachedData = localStorage.getItem(cacheKey);
-
-    if (cachedData) {
-      return JSON.parse(cachedData) as T;
-    }
-
     try {
       const response = await this.get<T>(`/load/${season}/${resource}`);
       localStorage.setItem(cacheKey, JSON.stringify(response));
       return response;
     } catch (error) {
       console.error(`Error loading ${resource} data: `, error);
+
+      const cachedData = localStorage.getItem(cacheKey);
+
+      if (cachedData) {
+        return JSON.parse(cachedData) as T;
+      }
+
       throw error;
     }
   }
