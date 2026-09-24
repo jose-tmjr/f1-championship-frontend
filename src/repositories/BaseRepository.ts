@@ -3,13 +3,6 @@ import http from "@/api/http";
 export abstract class BaseRepository {
   protected http = http;
 
-  // constructor() {
-  //   this.http.interceptors.request.use((config) => {
-  //     config.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
-  //     return config;
-  //   });
-  // }
-
   protected async get<T>(url:string) {
     const response = await this.http.get<T>(url);
     return response.data;

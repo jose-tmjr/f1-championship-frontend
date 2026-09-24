@@ -30,8 +30,8 @@
             <div class="flex justify-center items-end gap-1">
               <div :class="['bg-white rounded-lg shadow-md overflow-hidden podium-card', positionClass(2)]">
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[1].driverTeamId}`"
-                  :src="`assets/images/drivers/${race.driverResults[1].driverId}.png`"
-                  :alt="`assets/images/drivers/${race.driverResults[1].driverId}.png`" />
+                  :src="`assets/images/${year}/drivers/${race.driverResults[1].driverId}.png`"
+                  :alt="`assets/images/${year}/drivers/${race.driverResults[1].driverId}.png`" />
                 <div class="bg-zinc-800 flex flex-col sm:flex-row items-center sm:items-center">
                   <div class="position flex items-center self-stretch">
                     <p class="w-full text-center">2nd</p>
@@ -44,8 +44,8 @@
               </div>
               <div :class="['bg-white rounded-lg shadow-md overflow-hidden podium-card', positionClass(1)]">
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[0].driverTeamId}`"
-                  :src="`assets/images/drivers/${race.driverResults[0].driverId}.png`"
-                  :alt="`assets/images/drivers/${race.driverResults[0].driverId}.png`" />
+                  :src="`assets/images/${year}/drivers/${race.driverResults[0].driverId}.png`"
+                  :alt="`assets/images/${year}/drivers/${race.driverResults[0].driverId}.png`" />
                 <div class="bg-zinc-800 flex flex-col sm:flex-row items-center sm:items-center">
                   <div class="position flex items-center self-stretch">
                     <p class="w-full text-center">1st</p>
@@ -58,8 +58,8 @@
               </div>
               <div :class="['bg-white rounded-lg shadow-md overflow-hidden podium-card', positionClass(3)]">
                 <img :class="`w-full h-20 object-scale-down bg-team-${race.driverResults[2].driverTeamId}`"
-                  :src="`assets/images/drivers/${race.driverResults[2].driverId}.png`"
-                  :alt="`assets/images/drivers/${race.driverResults[2].driverId}.png`" />
+                  :src="`assets/images/${year}/drivers/${race.driverResults[2].driverId}.png`"
+                  :alt="`assets/images/${year}/drivers/${race.driverResults[2].driverId}.png`" />
                 <div class="bg-zinc-800 flex flex-col sm:flex-row items-center sm:items-center">
                   <div class="position flex items-center self-stretch">
                     <p class="w-full text-center">3rd</p>
@@ -73,7 +73,7 @@
             </div>
           </div>
           <div v-if="race.driverResults.length === 0" class="flex flex-1 items-center justify-center">
-            <img :src="`assets/images/races/${race.raceLocation}.png`" class="h-7/10 w-7/10 object-contain" />
+            <img :src="`assets/images/${year}/races/${race.raceLocation}.png`" class="h-7/10 w-7/10 object-contain" />
           </div>
         </div>
       </div>
@@ -85,9 +85,10 @@
 <style src="@/components/Races/BodyMobileComponent.css"></style>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, watch, onMounted } from "vue";
 import RaceService from "@/services/RaceService";
 import type RaceResultsModel from "@/models/RaceResultsModel";
+import { selectedSeason } from "@/stores/SeasonStore";
 
 
 const races = ref<RaceResultsModel[]>([]);
@@ -110,12 +111,19 @@ async function loadRaces() {
 
 const isLoading = ref(true);
 const isError = ref(false);
+const year = ref(selectedSeason.value);
 
 const positionClass = (position: number) => {
   return position === 1 ? ['w-40', 'm-2'] : ['w-40'];
 };
 
 onMounted(() => {
+  loadRaces();
+});
+
+watch(selectedSeason, () => {
+  isError.value = false;
+  isLoading.value = true;
   loadRaces();
 });
 </script>

@@ -26,8 +26,8 @@
         <div v-for="(driver) in drivers" :key="driver.driverId" class="card flex flex-col">
           <div class="driver-card relative w-full h-full min-h-[250px] rounded-lg overflow-hidden flex items-end">
             <div :class="`absolute inset-0 w-full h-full bg-team-${driver.driverTeamId}`"></div>
-            <img class="relative z-10 ml-60" :src="`assets/images/drivers/${driver.driverId}.png`"
-              :alt="`assets/images/drivers/${driver.driverId}.png`" />
+            <img class="relative z-10 ml-60" :src="`assets/images/${year}/drivers/${driver.driverId}.png`"
+              :alt="`assets/images/${year}/drivers/${driver.driverId}.png`" />
             <div class="absolute top-0 left-0 w-full p-2 z-20 text-sm">
               <span class="text-white">Grand Prix Wins: {{ driver.driverWins }}</span>
               <br />
@@ -51,9 +51,10 @@
 <style src="@/components/Drivers/BodyMobileComponent.css"></style>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, watch, onMounted } from "vue";
 import DriversService from "@/services/DriversService";
 import type DriverHistoryModel from "@/models/DriverHistoryModel";
+import { selectedSeason } from "@/stores/SeasonStore";
 
 
 const drivers = ref<DriverHistoryModel[]>([]);
@@ -76,8 +77,15 @@ async function loadDrivers() {
 
 const isLoading = ref(true);
 const isError = ref(false);
+const year = ref(selectedSeason.value);
 
 onMounted(() => {
+  loadDrivers();
+});
+
+watch(selectedSeason, () => {
+  isError.value = false;
+  isLoading.value = true;
   loadDrivers();
 });
 </script>

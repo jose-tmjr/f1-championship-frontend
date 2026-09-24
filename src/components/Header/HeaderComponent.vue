@@ -30,10 +30,9 @@
                 </ul>
             </nav>
 
-            <button @click="clearAppCache"
-                class="bg-transparent hover:bg-red-500 text-white-700 font-semibold hover:text-white py-2 px-4 border border-white-500 hover:border-transparent rounded update-button">
-                Update Data
-            </button>
+            <div class="ml-4 flex items-center">
+                <YearSelector />
+            </div>
         </div>
     </header>
 </template>
@@ -43,7 +42,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { clearCache } from "@/utils/CacheUtils";
+import YearSelector from "@/components/YearSelector/YearSelector.vue";
 
 const menuItems = ref([
     { path: "/", label: "Home" },
@@ -55,9 +54,5 @@ const isMenuOpen = ref(false);
 
 function toggleMenu() {
     isMenuOpen.value = !isMenuOpen.value;
-}
-
-function clearAppCache() {
-    clearCache();
 }
 </script>
