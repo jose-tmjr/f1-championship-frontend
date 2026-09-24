@@ -85,7 +85,7 @@
 <style src="@/components/Races/BodyMobileComponent.css"></style>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import RaceService from "@/services/RaceService";
 import type RaceResultsModel from "@/models/RaceResultsModel";
 import { selectedSeason } from "@/stores/SeasonStore";
@@ -111,7 +111,7 @@ async function loadRaces() {
 
 const isLoading = ref(true);
 const isError = ref(false);
-const year = ref(selectedSeason.value);
+const year = computed(() => selectedSeason.value);
 
 const positionClass = (position: number) => {
   return position === 1 ? ['w-40', 'm-2'] : ['w-40'];

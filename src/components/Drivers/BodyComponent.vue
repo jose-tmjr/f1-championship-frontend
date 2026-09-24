@@ -51,7 +51,7 @@
 <style src="@/components/Drivers/BodyMobileComponent.css"></style>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import DriversService from "@/services/DriversService";
 import type DriverHistoryModel from "@/models/DriverHistoryModel";
 import { selectedSeason } from "@/stores/SeasonStore";
@@ -77,7 +77,7 @@ async function loadDrivers() {
 
 const isLoading = ref(true);
 const isError = ref(false);
-const year = ref(selectedSeason.value);
+const year = computed(() => selectedSeason.value);
 
 onMounted(() => {
   loadDrivers();

@@ -24,7 +24,7 @@
         <div class="highlight-banners">
           <div class="wrap flex justify-center items-end gap-0 podium">
             <HighlightCard :position="2" :name="drivers[1].name" :points="drivers[1].points" :imageId="drivers[1].id"
-              :bgId="drivers[1].teamId" :year="year" />
+              :bgId="drivers[1].teamId" />
             <HighlightCard :position="1" :name="drivers[0].name" :points="drivers[0].points" :imageId="drivers[0].id"
               :bgId="drivers[0].teamId" />
             <HighlightCard :position="3" :name="drivers[2].name" :points="drivers[2].points" :imageId="drivers[2].id"
@@ -93,7 +93,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch, onMounted } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import HomeService from "@/services/HomeService";
 import type DriverModel from "@/models/driverModel";
 import type ConstructorModel from "@/models/constructorModel";
@@ -104,7 +104,7 @@ const drivers = ref<DriverModel[]>([]);
 const constructors = ref<ConstructorModel[]>([]);
 const isLoading = ref(true);
 const isError = ref(false);
-const year = ref(selectedSeason.value);
+const year = computed(() => selectedSeason.value);
 
 async function loadDrivers() {
   try {
