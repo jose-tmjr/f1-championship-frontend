@@ -31,9 +31,9 @@ h1 {
 }
 
 
-.main-bottom table tr { 
+.main-bottom table tr {
   color: white;
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s;
   opacity: 0.8;
   border-bottom: 1px solid white;
 }
@@ -110,10 +110,18 @@ main .wrap {
   background-image: linear-gradient(to left, #000000, #52E252);
 }
 
+.bg-team-6 {
+  background-image: linear-gradient(to right, #0a5e50af, #24E9C8);
+}
+
+.bg-team-7 {
+  background-image: linear-gradient(to right, #043CC5, #5886F7);
+}
+
 .main-top .highlight-banners {
   position: relative;
-  height: 100%; 
-  background: 
+  height: 100%;
+  background:
       linear-gradient(45deg, #000000 25%, transparent 25%),
       linear-gradient(-45deg, #000000 25%, transparent 25%),
       linear-gradient(45deg, transparent 75%, #000000 75%),
@@ -148,7 +156,7 @@ main .wrap {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 43%; 
+  height: 43%;
   background-color: #181818;
 }
 

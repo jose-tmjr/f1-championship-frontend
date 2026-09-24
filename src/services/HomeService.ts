@@ -1,6 +1,4 @@
 import DriverModel from "@/models/driverModel";
-import type { Race } from "@/Interfaces/Race";
-import type { Result } from "@/Interfaces/Result";
 import { calculateRacePoint } from "@/utils/ScorePoints";
 import ConstructorModel from "@/models/constructorModel";
 import BaseService from "./BaseService";
