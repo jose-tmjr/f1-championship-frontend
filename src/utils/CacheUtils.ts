@@ -3,6 +3,8 @@ export enum CacheKeys {
   TEAMS = "teams",
   RACES = "races",
   RESULTS = "results",
+  STANDINGS_DRIVERS = "standings-drivers",
+  STANDINGS_TEAMS = "standings-teams"
 }
 
 export const CacheExpiration = 1000 * 60 * 60 * 24; // 24 hours

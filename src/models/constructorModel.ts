@@ -11,7 +11,7 @@ class ConstructorModel {
     this.teamId = team.team_id;
     this.teamName = team.team_name;
     this.driversName = driverTwo ? driverOne.name + ' / ' + driverTwo.name : driverOne.name;
-    this.points = driverOne.points + (driverTwo?.points || 0);
+    this.points = driverOne.points;
   }
 }
 
