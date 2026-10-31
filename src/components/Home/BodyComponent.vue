@@ -108,7 +108,7 @@ const year = computed(() => selectedSeason.value);
 
 async function loadDrivers() {
   try {
-    const service = await HomeService.create();
+    const service = new HomeService();
     await service.getHomeData().then((response) => {
       drivers.value = response.drivers;
       constructors.value = response.constructors;
